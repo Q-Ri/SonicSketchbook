@@ -41,7 +41,6 @@ function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
   canvas.parent("sketch-container"); 
   canvas.mousePressed(startDrawing);//we only want to start draw when clicking on canvas element
-  canvas.touchStarted(startDrawing);
   
   //add our gui
   gui = select("#gui-container");
@@ -182,12 +181,11 @@ function handleSliderInputChange(){
 
 }
 
-function startAudioManually() {
-  if (!audioStarted) {
-    userStartAudio();
-    audioStarted = true;
-    console.log("audio unlocked");
+function touchStarted() {
+  if (getAudioContext().state !== 'running') {
+    getAudioContext().resume();
   }
+  startDrawing();
 }
 
 function goStartAudio(){
