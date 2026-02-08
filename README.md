@@ -2,7 +2,7 @@
  
 This is a web-sockets with socket.io multi-user drawing example, with the further development of sonic sketchbook approaches. 
 
-This project can be seen on [Render] (https://render.com/): [https://remote-painter-szcm.onrender.com/] (https://remote-painter-szcm.onrender.com)
+This project can be seen on [Render] (https://render.com/): [https://sonic-sketchbook.onrender.com] (https://sonic-sketchbook.onrender.com)
 
 The original example can be seen on [Render](https://render.com/): [https://remote-painter.onrender.com/](https://remote-painter.onrender.com/)
 
