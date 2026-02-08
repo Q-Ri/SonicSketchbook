@@ -35,12 +35,11 @@ let startAudio = false;
 const min_midi = 24;
 const max_midi = 108;
 
-let audioStarted = false;
-
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
   canvas.parent("sketch-container"); 
   canvas.mousePressed(startDrawing);//we only want to start draw when clicking on canvas element
+  canvas.touchStarted(startDrawing);
   
   //add our gui
   gui = select("#gui-container");
@@ -179,13 +178,6 @@ function handleSliderInputChange(){
   g = map(gSlider.value(),0,gSlider.width,0,255);
   b = map(bSlider.value(),0,bSlider.width,0,255);
 
-}
-
-function touchStarted() {
-  if (getAudioContext().state !== 'running') {
-    getAudioContext().resume();
-  }
-  startDrawing();
 }
 
 function goStartAudio(){
