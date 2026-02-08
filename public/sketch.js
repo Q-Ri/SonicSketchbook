@@ -35,6 +35,8 @@ let startAudio = false;
 const min_midi = 24;
 const max_midi = 108;
 
+let audioStarted = false;
+
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
   canvas.parent("sketch-container"); 
@@ -178,6 +180,14 @@ function handleSliderInputChange(){
   g = map(gSlider.value(),0,gSlider.width,0,255);
   b = map(bSlider.value(),0,bSlider.width,0,255);
 
+}
+
+function startAudioManually() {
+  if (!audioStarted) {
+    userStartAudio();
+    audioStarted = true;
+    console.log("audio unlocked");
+  }
 }
 
 function goStartAudio(){
